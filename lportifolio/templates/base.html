@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<!-- template from: https://codepad.co/snippet/expanding-column-layout -->
+    
+{% load sass_tags %}
+{% load static %}
+
+<head>
+
+    <!-- Font Awesome - set of icons -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <!-- Devicon CSS - set of icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+          
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% sass_src 'css/style.scss' %}" rel="stylesheet" type="text/css" />
+    
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script defer src="{% static 'js/projects.js' %}"></script> 
+
+    <title>Dr. Larissa Schultze</title>
+</head>
+
+<div id="container">
+    <div id="top_div">
+        <div class="banner">
+            <h1 class="banner-content">Dr. Larissa Schultze</h1>
+            <h2 class="banner-content">IT Consultant, Software developer and automation enthusiast.</h2>
+    
+            <p align="right">
+            <a href="https://www.linkedin.com/in/larissa-schultze/" target="_blank"><i class="fa fa-linkedin"></i></a> 
+            __ 
+            <a href="https://github.com/schultzl" target="_blank"><i class="fa fa-github"></i></a>
+            __ 
+            <a href="https://calendly.com/larissaschultze/15min" target="_blank"><i class="fa fa-phone"></i></a>
+            </p>
+        </div>
+    
+        <!--div class="header-right" align="right"> 
+            <img src="{% static 'media/images/images/me.jpeg' %}" alt="" width="24%" vspace="15">
+        </div--> 
+
+        <section class="picstrips">
+            <article class="picstrips__picstrip">
+                <div class="picstrip__content">
+                    <h2 class="picstrip__title" data-name="Lorem"> 
+                        <img src="{% static 'media/images/images/me2.png' %}" alt="" width="100%" vspace="15">
+                    </h2>
+                    <div class="picstrip__inner-text">
+                        <img src="{% static 'media/images/images/me.jpeg' %}" alt="" width="30%" vspace="50" hspace="350">
+                        <h5>
+                            Hi there and welcome to my website! <br><br>
+                            Here you'll find some information about who I am as a person,
+                            what drives and motivates me, as well as the skillset I've been developing throughout the years.
+                            <br><br>    
+                            Shortly, I'm Larissa and I was born in São Paulo, Brazil. At the age of 17y, I was given the thrilling 
+                            opportunity to come to Germany and study. I din't know how to speak German or know anyone there really... 
+                            but as challenges make me sparkle, I decided to give it a shot. Fast forward a couple of years and here I
+                            am, still in Germany, based in Hamburg and driving digitization and the implementation of emerging technologies.
+                            <br><br>
+                            Of course, this wouldn't have been possible without the support of many people along the way that 
+                            believed in my talent and helped me thrive, for whom I am more than thankful. With this platform, I aim
+                            to reach two main goals:
+
+                            <br><br>
+                            <ol>
+                                <li>Connect with and support those interested in following a similar path;</li>
+                                <li>Connect with stakeholders interested in or already implementing one or more technologies I use
+                                    myself.
+                                </li>
+                            </ol>
+                            <br>
+                            I can't wait to exchange ideas and building the future together with you!
+    
+                            <p align="right">
+                            <a href="https://www.linkedin.com/in/larissa-schultze/" target="_blank"><i class="fa fa-linkedin"></i></a> 
+                            __ 
+                            <a href="https://github.com/schultzl" target="_blank"><i class="fa fa-github"></i></a>
+                            __ 
+                            <a href="https://calendly.com/larissaschultze/15min" target="_blank"><i class="fa fa-phone"></i></a>
+                            </p>
+                        </h5>
+                    </div>
+                </div>
+            </article>
+            <i class="fa fa-close picstrip__picclose"></i>
+        </section>
+    </div>    
+
+    <div id="middle_div">
+        {% block page_content %}{% endblock %}
+    </div>
+  
+    <div id="bottom_div">
+        <p class="copyright">© Copyright 2022  · Larissa Schultze  · All rights reserved</p>
+    </div>
+    
+</div>

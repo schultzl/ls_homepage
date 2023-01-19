@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+<section class="strips">
+    {% for project in projects %}
+        <article class="strips__strip">
+            <div class="strip__content">
+                <h2 class="strip__title" data-name="Lorem">{{ project.title }} <br> <p style="font-size:0.7vw;color:white;"> {{ project.description }} </p> </h2>
+                <div class="strip__inner-text">
+                    <h3>{{ project.title }} <br></h3>
+                    <h4>{{ project.description }} <br><br></h4>
+                    {% if project.title == 'Work & science' %}
+                        {% for item in jobs %}
+                            <button type="button" class="collapsible {{ item.pk }}"> &rarr;    <b>{{ item.job_title }}</b> | {{ item.company_name }} | {{ item.start_date }} - {{ item.end_date|default:"today" }} </button>
+                                <div class="content">
+                                    <h4>Main tasks:</h4>
+                                    <p>{{ item.description }}</p>
+                                    <br>
+                                    <h4>Skills:</h4>
+                                    <p>{{ item.skills.all|join:", " }}</p>
+                                </div>
+                        {% endfor %}
+                    {% elif project.title == 'Tech & expertise' %}
+                        {% for tech in techs %}                 
+                            <i class="devicon-{{ tech.dev_icon|lower }}-plain">
+                                <span>{{ tech.name | upper }}</span> 
+                            </i> 
+                        {% endfor %}
+                        <p><br><br></p>
+                    {% elif project.title == 'Contact' %}
+                        <!-- <div style="margin:80px">
+                            <form method="post">
+                            {% csrf_token %}
+                                {{form.as_p}}
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+                        -->
+                        <p>
+                        Now it's your turn. Get in touch if you want to know more about future projects, 
+                        collaborate in some of my existing experiments, or just talk about squiggly career paths.
+
+                        <br><br>
+                        </p>
+
+                    {% else %}
+                        <h4>Coming soon!</h4>
+
+                        <p> 
+                            <i class="fa fa-clock-o fa-5" aria-hidden="true"></i><br><br>
+                            Hi there... <br><br> 
+                            
+                            Looks like you tried to access content that's still being built/not published yet - but will be soon, so stay tuned! <br><br>
+                            Please do reach out to me directly through one of the channels below if something 
+                            caught your interest and you'd like to know more. <br><br>
+                        </p>
+                    {% endif %}
+                    <p>
+                    <a href="https://www.linkedin.com/in/larissa-schultze/" target="_blank"><i class="fa fa-linkedin"></i></a> 
+                    __ 
+                    <a href="https://github.com/schultzl" target="_blank"><i class="fa fa-github"></i></a>
+                    __ 
+                    <a href="https://calendly.com/larissaschultze/15min" target="_blank"><i class="fa fa-phone"></i></a>
+                    </p>
+                </div>        
+            </div>
+        </article>
+        <i class="fa fa-close strip__close"></i>
+    {% endfor %}
+</section>
+{% endblock %}
+
+
+
+<!-- p align="left">&rarr;    <a href="{% url 'job_detail' item.pk %}"
+    target="_blank">{{ item.job_title }}</a>
+</p -->
+
+
