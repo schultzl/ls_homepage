@@ -16,4 +16,5 @@ db.sqlite3
 !.vscode/extensions.json 
 .history
 .env
+.privenv
 mydata.json
