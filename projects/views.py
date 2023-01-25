@@ -1,7 +1,7 @@
 
 from django.conf import settings
 from django.shortcuts import render, redirect
-from projects.models import Project, Job, Technology
+from projects.models import Project, Job, Technology, ArtWork
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
@@ -11,11 +11,13 @@ def project_index(request):
     projects = Project.objects.all()
     jobs = Job.objects.all().order_by("-id")
     techs = Technology.objects.all()
+    artworks = ArtWork.objects.all()
 
     context = {
         'projects': projects,
         'jobs': jobs,
-        'techs': techs
+        'techs': techs,
+        'artworks': artworks
     }
     return render(request, 'project_index.html', context)
 

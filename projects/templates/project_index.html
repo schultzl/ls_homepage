@@ -27,6 +27,19 @@
                             </i> 
                         {% endfor %}
                         <p><br><br></p>
+                    
+                    {% elif project.title == 'Art' %}    
+                            <!-- {% autoescape off %}           
+                            {{ artwork.openseaLink }}
+                            {% endautoescape %} -->
+                            <div class="lefty">
+                                {% for artwork in artworks %}  
+                                    <a href={{ artwork.openseaLink }}>
+                                        <img src={{ artwork.openseaImage }} height="100">
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        <p><br><br></p>
                     {% elif project.title == 'Contact' %}
                         <!-- <div style="margin:80px">
                             <form method="post">

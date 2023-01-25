@@ -265,14 +265,21 @@ i[class^="devicon"] span {
   font-weight: 600;
   font-family: Raleway, sans-serif; }
 
-@media (max-width: 768px) {
+div[class="lefty"] {
+  float: left;
+  width: 33.33%;
+  padding: 5px; }
+
+@media (max-width: 500px) {
   i[class^="devicon"] {
     font-size: 4.5rem; }
   i[class^="devicon"] > span {
     font-size: 0.7rem; }
   i[class^="devicon"]:hover {
     color: #333333;
-    font-size: 3.5rem; } }
+    font-size: 3.5rem; }
+  div[class="lefty"] {
+    width: 100%; } }
 
 body {
   font-family: 'Lato';

@@ -65,10 +65,11 @@ class Technology(models.Model):
      #   </div>
 
 
-# - 3 - areas of expertise
-#class Topics(models.Model):
-    #title = models.CharField(max_length=100)
-    #description = models.TextField()
+# - 3 - Art
+class ArtWork(models.Model):
+    title = models.CharField(max_length=100)
+    openseaLink = models.TextField(null=True,help_text="opensea link")
+    openseaImage = models.TextField(null=True,help_text="opensea image")
     #technology = models.CharField(max_length=20)
     #image = models.FilePathField(path="/img")
 

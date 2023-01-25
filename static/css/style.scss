@@ -242,6 +242,7 @@ text-align:center;
       transform: skew(-30deg) scaleY(1) translate(0, 0);
       @include easeOut;
     }
+
   }
   
   .strip__inner-text {
@@ -402,7 +403,13 @@ i[class^="devicon"] span {
   font-family: Raleway, sans-serif;
 }
 
-@media (max-width: 768px) {
+div[class="lefty"] {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+@media (max-width: 500px) {
   i[class^="devicon"] {
       font-size: 4.5rem;
   }
@@ -414,6 +421,10 @@ i[class^="devicon"] span {
   i[class^="devicon"]:hover {
       color: #333333;
       font-size: 3.5rem;
+  }
+
+  div[class="lefty"] {
+    width: 100%;
   }
 }
 
@@ -670,3 +681,6 @@ button[class^="collapsible"]  {
   overflow: hidden;
   background-color: rgb(71, 91, 104);
 }
+
+
+
