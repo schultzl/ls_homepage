@@ -239,7 +239,7 @@ text-align:center;
       background: white;
       opacity: 0.05;
       transform-origin: center center;
-      transform: skew(-30deg) scaleY(1) translate(0, 0);
+      transform: skew(-30deg) scale(1) translate(0, 0);
       @include easeOut;
     }
 
@@ -248,11 +248,22 @@ text-align:center;
   .strip__inner-text {
     will-change: transform, opacity;
     position: absolute;
-    z-index: 5;
+    z-index: 6;
     top: 50%;
     left: 50%;
     width: 70%;
-    transform: translate(-50%,-50%) scale(0.5);
+    transform: translate(-50%,-50%) scale(0.01);
+    opacity: 0;
+    @include easeOut;
+  }
+
+  .strip__contact {
+    will-change: opacity;
+    position: absolute;
+    z-index: 7;
+    left: 105%;
+    top: 85%;
+    width: 5%;
     opacity: 0;
     @include easeOut;
   }
@@ -285,7 +296,11 @@ text-align:center;
     .strip__inner-text {
       opacity: 1;
       transform: translate(-50%, -50%) scale(1);
-    }
+    }    
+    
+    .strip__contact {
+      opacity: 1;
+    }    
   }
 }
 
@@ -405,7 +420,7 @@ i[class^="devicon"] span {
 
 div[class="lefty"] {
   float: left;
-  width: 33.33%;
+  height: 100px;
   padding: 5px;
 }
 
@@ -424,7 +439,7 @@ div[class="lefty"] {
   }
 
   div[class="lefty"] {
-    width: 100%;
+    width: 10%;
   }
 }
 
@@ -565,7 +580,7 @@ $a-tags-hover: 'a:active, a:hover';
       background: white;
       opacity: 0.05;
       transform-origin: center center;
-      transform: skew(-30deg) scaleY(1) translate(0, 0);
+      transform: skew(-30deg) scale(1) translate(0, 0);
       @include easeOut;
     }
   }
@@ -578,7 +593,7 @@ $a-tags-hover: 'a:active, a:hover';
     top: 50%;
     left: 50%;
     width: 50%;
-    transform: translate(-50%,-50%) scale(0.5);
+    transform: translate(-50%,-50%) scale(0.05);
     opacity: 0;
     @include easeOut;
   }
@@ -681,6 +696,3 @@ button[class^="collapsible"]  {
   overflow: hidden;
   background-color: rgb(71, 91, 104);
 }
-
-
-

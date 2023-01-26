@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'sass_processor',
     'projects',
     'blog',
+    'orderable',
 ]
 
 MIDDLEWARE = [

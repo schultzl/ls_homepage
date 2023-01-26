@@ -1,4 +1,6 @@
 from django.db import models
+from orderable.models import Orderable
+from django.utils import timezone
 
 
 #class Tiles(models.Model):
@@ -33,6 +35,7 @@ class Job(models.Model):
     description = models.TextField()
     skills = models.ManyToManyField('Skill', related_name='skills')
     #image = models.FilePathField(path="/img")
+
     def __str__(self):
         return self.job_title + ' / ' + self.company_name
 
@@ -73,6 +76,9 @@ class ArtWork(models.Model):
     #technology = models.CharField(max_length=20)
     #image = models.FilePathField(path="/img")
 
+    def __str__(self):
+        return self.title
+
 # - 4 - blog and papers
 #class Papers(models.Model):
     #title = models.CharField(max_length=100)
@@ -81,11 +87,16 @@ class ArtWork(models.Model):
     #image = models.FilePathField(path="/img")
 
 
-class Project(models.Model):
+class Project(Orderable):
+    index = models.CharField(max_length=20, null=True, default=1)
     title = models.CharField(max_length=100)
     description = models.TextField()
     technology = models.CharField(max_length=20)
     image = models.ImageField(upload_to='images/', null=True, blank=True)
+
+    class Meta(Orderable.Meta):
+        ordering = ['index']
+
     def __str__(self):
         return self.title
 
