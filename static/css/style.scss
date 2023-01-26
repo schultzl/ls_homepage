@@ -257,13 +257,9 @@ text-align:center;
     @include easeOut;
   }
 
-  .strip__contact {
+  .strip__licontact {
     will-change: opacity;
-    position: absolute;
     z-index: 7;
-    left: 105%;
-    top: 85%;
-    width: 5%;
     opacity: 0;
     @include easeOut;
   }
@@ -298,7 +294,7 @@ text-align:center;
       transform: translate(-50%, -50%) scale(1);
     }    
     
-    .strip__contact {
+    .strip__licontact {
       opacity: 1;
     }    
   }
@@ -420,7 +416,6 @@ i[class^="devicon"] span {
 
 div[class="lefty"] {
   float: left;
-  height: 100px;
   padding: 5px;
 }
 
@@ -438,9 +433,9 @@ div[class="lefty"] {
       font-size: 3.5rem;
   }
 
-  div[class="lefty"] {
+  /*div[class="lefty"] {
     width: 10%;
-  }
+  }*/
 }
 
 

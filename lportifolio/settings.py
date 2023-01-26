@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'projects',
     'blog',
     'orderable',
+    'clearcache',
 ]
 
 MIDDLEWARE = [
