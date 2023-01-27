@@ -10,6 +10,13 @@
                     <h3>{{ project.title }} <br></h3>
                     <h4>{{ project.description }} <br><br></h4>
                     {% if project.title == 'Work & science' %}
+
+                        {% for tech in techs %}                 
+                            <i class="devicon-{{ tech.dev_icon|lower }}-plain">
+                                <span>{{ tech.name | upper }}</span> 
+                            </i> 
+                        {% endfor %}
+
                         {% for item in jobs %}
                             <button type="button" class="collapsible {{ item.pk }}"> &rarr;    <b>{{ item.job_title }}</b> | {{ item.company_name }} | {{ item.start_date }} - {{ item.end_date|default:"today" }} </button>
                                 <div class="content">
@@ -20,6 +27,7 @@
                                     <p>{{ item.skills.all|join:", " }}</p>
                                 </div>
                         {% endfor %}
+
                     {% elif project.title == 'Tech & expertise' %}
                         {% for tech in techs %}                 
                             <i class="devicon-{{ tech.dev_icon|lower }}-plain">
@@ -35,7 +43,8 @@
                             <div class="lefty">
                                 {% for artwork in artworks %}  
                                     <a href={{ artwork.openseaLink }}>
-                                        <img src={{ artwork.openseaImage }} height="250">
+                                        <!-- img src={{ artwork.openseaImage }} height="250" -->
+                                        <img src="{{ artwork.image.url }}" }} alt="{{ artwork.title }}" height="250">
                                     </a>
                                 {% endfor %}
                             </div>

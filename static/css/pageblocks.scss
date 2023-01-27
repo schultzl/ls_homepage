@@ -1,0 +1,69 @@
+@import "colors.scss";
+@import "mixin.scss";
+
+#container {
+height:100%;
+}
+
+#top_div {
+min-height: 48vh;
+height:50%;
+width:102%;
+background-color: var(--top-bottom-container);
+margin:auto;
+text-align:center;
+
+    &__mid{
+        will-change: width, right, z-index, height;
+        position: absolute;
+        top: 18vh;
+        min-height: 47.5vh;
+        width: 74%;
+        @include break {
+            min-height: 15vh;
+            top: 16vh;
+            left: 0;
+            width: 100%;
+            h1{
+                font-size: 22px;
+            }
+            h2{
+                font-size: 15px;
+            }
+
+            p{
+                font-size: 9px;
+            }
+        }
+    }
+}
+
+#middle_div {
+height:48%;
+width:100%;
+background-color: var(--middle-container);
+margin:auto;
+text-align:center;
+}
+
+#bottom_div {
+position: bottom;
+height:2%;
+width:102%;
+background-color: var(--top-bottom-container);
+margin:auto;
+text-align:center;
+}
+
+/*
+#header-right {
+    height: 52%;
+    width: 26%;
+    margin-right: 0px;
+    margin-bottom: 20px;
+}
+*/
+
+* {
+    box-sizing: border-box;
+}

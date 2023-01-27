@@ -51,22 +51,6 @@ class Technology(models.Model):
     def __str__(self):
         return self.name
 
-    # https://devicon.dev/
-    # <i class="devicon-python-plain"></i>
-    #<i class="{{ skill.dev_icon|lower }}">
-     #<!-- Skills Icons-->
-     #   <div class="container">
-     #       <div class="row">
-     #           {% for skill in self.skills.all %}
-     #               <div class="col col-sm-2">
-     #                   <i class="{{ skill.dev_icon|lower }}">
-     #                       <span>{{ skill.name | upper }}</span>
-     #                   </i>
-     #               </div>
-     #           {% endfor %}
-     #       </div>
-     #   </div>
-
 
 # - 3 - Art
 class ArtWork(models.Model):
@@ -74,7 +58,7 @@ class ArtWork(models.Model):
     openseaLink = models.TextField(null=True,help_text="opensea link")
     openseaImage = models.TextField(null=True,help_text="opensea image")
     #technology = models.CharField(max_length=20)
-    #image = models.FilePathField(path="/img")
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
 
     def __str__(self):
         return self.title
