@@ -4,6 +4,8 @@ This is the source code for my personal website,
 which is under development and has not yet been deployed.
 
 This website is Python-Django based. 
+WIP: https://larissaschultze.com/
+(at the moment, only desktop version works properly, mobile needs tunning)
 
 ## Requirements
 
