@@ -19,3 +19,4 @@ db.sqlite3
 .privenv
 mydata.json
 static/media/images/images/
+cloud_sql_proxy
