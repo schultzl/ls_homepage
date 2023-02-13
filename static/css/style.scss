@@ -51,11 +51,17 @@ i[class^="devicon"] {
   font-size: 2rem;
   margin: 0vh 3vh 2vh auto;
   text-align: center;
+  @include break {
+    font-size: 0.7rem;
+  }
 }
 
 i[class^="devicon"]:hover {
   color: var(--hover-dark);
   font-size: 2rem;
+  @include break {
+    font-size: 0.7rem;
+  }
 }
 
 i[class^="devicon"] span {
@@ -64,6 +70,9 @@ i[class^="devicon"] span {
   font-size: 1rem;
   font-weight: 600;
   font-family: Raleway, sans-serif;
+  @include break {
+    font-size: 0.4rem;
+  }
 }
 
 @media (max-width: 500px) {
@@ -96,6 +105,11 @@ button[class^="collapsible"]  {
   outline: none;
   font-size: 22px;
   color: var(--light);
+
+  @include break {
+    padding: 12px;
+    font-size: 12px;
+  }
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -109,4 +123,8 @@ button[class^="collapsible"]  {
   display: none;
   overflow: hidden;
   background-color: var(--hover-light);
+}
+
+img {
+  height:250;
 }

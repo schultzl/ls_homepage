@@ -198,6 +198,8 @@
           font-size: 22px; }
         #top_div__mid h2 {
           font-size: 15px; }
+        #top_div__mid h4 {
+          font-size: 15px; }
         #top_div__mid p {
           font-size: 10px; } }
 #middle_div {
@@ -631,7 +633,11 @@
     @media screen and (max-width: 640px) {
       .strips .strip__inner-text h3 {
         font-size: 12px; }
+      .strips .strip__inner-text h2 {
+        font-size: 12px; }
       .strips .strip__inner-text h4 {
+        font-size: 12px; }
+      .strips .strip__inner-text h4#light {
         font-size: 12px; }
       .strips .strip__inner-text p {
         font-size: 10px; }
@@ -914,18 +920,24 @@ i[class^="devicon"] {
   font-size: 2rem;
   margin: 0vh 3vh 2vh auto;
   text-align: center; }
-
+  @media screen and (max-width: 640px) {
+    i[class^="devicon"] {
+      font-size: 0.7rem; } }
 i[class^="devicon"]:hover {
   color: var(--hover-dark);
   font-size: 2rem; }
-
+  @media screen and (max-width: 640px) {
+    i[class^="devicon"]:hover {
+      font-size: 0.7rem; } }
 i[class^="devicon"] span {
   display: block;
   margin-top: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
   font-family: Raleway, sans-serif; }
-
+  @media screen and (max-width: 640px) {
+    i[class^="devicon"] span {
+      font-size: 0.4rem; } }
 @media (max-width: 500px) {
   i[class^="devicon"] {
     font-size: 4.5rem; }
@@ -949,7 +961,10 @@ button[class^="collapsible"] {
   outline: none;
   font-size: 22px;
   color: var(--light); }
-
+  @media screen and (max-width: 640px) {
+    button[class^="collapsible"] {
+      padding: 12px;
+      font-size: 12px; } }
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, button[class^="collapsible"]:hover {
   background-color: var(--hover-light); }
@@ -960,5 +975,8 @@ button[class^="collapsible"] {
   display: none;
   overflow: hidden;
   background-color: var(--hover-light); }
+
+img {
+  height: 250; }
 
 /*# sourceMappingURL=style.css.map */

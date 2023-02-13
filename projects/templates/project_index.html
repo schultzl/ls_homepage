@@ -47,7 +47,11 @@
                                 {% for artwork in artworks %}  
                                     <a href={{ artwork.openseaLink }}>
                                         <!-- img src={{ artwork.openseaImage }} height="250" -->
-                                        <img src="{{ artwork.image.url }}" }} alt="{{ artwork.title }}" height="250">
+                                        <picture>
+                                            <source srcset="{{ artwork.image.url }}"  height="250" media="(min-width: 700px)">
+                                            <source srcset="{{ artwork.image.url }}"  height="75">
+                                            <img src="{{ artwork.image.url }}" alt="{{ artwork.title }}">
+                                          </picture>
                                     </a>
                                 {% endfor %}
                             </div>
