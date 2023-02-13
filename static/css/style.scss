@@ -3,15 +3,23 @@
 @import "pageblocks.scss";
 @import "topdiv.scss";
 @import "middiv.scss";
+@import "contact.scss";
 
 html, body { height: 100% }
 
-p.copyright {
+p#copyright {
 	position: absolute;
 	width: 100%;
-	color: var(--copyright);
-	line-height: 15px;
-	font-size: 0.7em;
+	color: var(--light);
+	font-size: 15px;
+	text-align: center;
+}
+
+p#copyright-inner {
+	position: absolute;
+	width: 100%;
+	color: var(--dark);
+	font-size: 15px;
 	text-align: center;
 }
 
@@ -26,23 +34,27 @@ div[class="lefty"] {
   padding: 5px;
 }
 
+div[class="centery"] {
+  text-align: center;
+}
+
 i[class="fa fa-clock-o fa-5"] {
   display: inline-block;
-  color: rgb(5, 4, 22);
+  color: var(--dark);
   font-size: 10rem;
   text-align: center;
 }
 
 i[class^="devicon"] {
   display: inline-block;
-  color: rgb(211, 206, 206);
+  color: var(--light);
   font-size: 2rem;
   margin: 0vh 3vh 2vh auto;
   text-align: center;
 }
 
 i[class^="devicon"]:hover {
-  color: #333333;
+  color: var(--hover-dark);
   font-size: 2rem;
 }
 
@@ -64,7 +76,7 @@ i[class^="devicon"] span {
   }
 
   i[class^="devicon"]:hover {
-      color: #333333;
+      color: var(--hover-dark);
       font-size: 3.5rem;
   }
 
@@ -75,20 +87,20 @@ i[class^="devicon"] span {
 
 /* Style the button that is used to open and close the collapsible content */
 button[class^="collapsible"]  {
-  background-color: rgba(0,0,0,0);
+  background-color: var(--collapsible-closed);
   cursor: pointer;
   padding: 18px;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
-  color: white;
+  font-size: 22px;
+  color: var(--light);
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, button[class^="collapsible"]:hover {
-  background-color: rgb(71, 91, 104);
+  background-color: var(--hover-light);
 }
 
 /* Style the collapsible content. Note: hidden by default */
@@ -96,5 +108,5 @@ button[class^="collapsible"]  {
   padding: 0 18px;
   display: none;
   overflow: hidden;
-  background-color: rgb(71, 91, 104);
+  background-color: var(--hover-light);
 }

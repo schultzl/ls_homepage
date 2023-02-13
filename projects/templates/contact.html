@@ -1,15 +1,94 @@
 <!--Contact form-->
 <!--TODO #6 Figure out the communication/is it beneficial?-->
-<div style="margin:80px">
-    <h1>Contact</h1>
-    <h4>Contact us directly if you have any questions</h4>
-    <p>
-        Please write your name, email address and a message below if you have any questions.
-        One of our staff members will be happy to contact you directly and answer your questions as soon as possible. 
-    </p>
-    <form method="post">
-    {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Submit</button>
-    </form>
-</div>
+
+{% load sass_tags %}
+{% load static %}
+{% load widget_tweaks %}
+
+<head>
+
+    <!-- Font Awesome - set of icons -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <!-- Devicon CSS - set of icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="{% sass_src 'css/style.scss' %}" rel="stylesheet" type="text/css" />
+
+    <title>Dr. Larissa Schultze</title>
+</head>
+
+<body>
+  <div id="contact">
+      <h1 id="dark">Let's connect</h1>
+
+      <h4>Reach out if you have an idea on how we could collaborate, if you have an interview/speaker request, or other.</h4>
+      <p>
+          The more information you include in your message, the better we might be able to communicate. 
+      </p>
+          
+      <p>
+          Being a woman in IT/software development, I am eager to connect to and empower women who would like to follow this path.
+          I'm also happy to speak about environmental and climate science at schools and about the transition from academia
+          to the private sector in universities.
+      </p>
+                            
+      <form method="post" novalidate>
+        {% csrf_token %}
+
+        {% for hidden_field in form.hidden_fields %}
+          {{ hidden_field }}
+        {% endfor %}
+
+        {% if form.non_field_errors %}
+          <div id="alert-error">
+            {% for error in form.non_field_errors %}
+              {{ error }}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% for field in form.visible_fields %}
+          <div>
+            <p id="form-text"> {% if field.field.required %} * {% endif %} {{ field.label_tag }}
+            {% if form.is_bound %}
+              {% if field.errors %}
+                {% render_field field class="form-control is-invalid" %}
+                {% for error in field.errors %}
+                  <div id="alert-error">
+                    {{ error }}
+                  </div>
+                {% endfor %}
+              {% else %}
+                {% render_field field class="form-control is-valid" %}
+              {% endif %}
+            {% else %}
+              {% render_field field class="form-control" %}
+            {% endif %}
+            </p>
+          </div>
+        {% endfor %}
+
+        <button type="submit" class="button" style="vertical-align:middle"><span>Submit</span></button>
+      </form>
+
+      <p align="right">
+              <a href="https://www.linkedin.com/in/larissa-schultze/" target="_blank"><i class="fa fa-linkedin"></i></a> 
+              <br> 
+              <a href="https://github.com/schultzl" target="_blank"><i class="fa fa-github"></i></a>
+              <br>
+              <a href="https://calendly.com/larissaschultze/20min" target="_blank"><i class="fa fa-phone"></i></a>
+      </p>
+
+      <p id="copyright-inner">© Larissa Schultze  · <a href="../license">Copyright 2022</a>  · All rights reserved  ·  <a href="privacy/">Privacy</a> </p>
+    </div>
+
+  <div id="contact_close">
+    <a href="../" target="_blank"><i class="fa fa-close"></i></a>
+  </div>
+  
+   
+
+</body>

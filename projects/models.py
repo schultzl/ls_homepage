@@ -92,3 +92,18 @@ class Project(Orderable):
 #   job_list += job.job_title + '\n\t' + job.description
 # p1 = Project( title='Jobs', description=job_list, technology='' )
 # p1.save()
+
+class Contact(models.Model):
+
+    REASONSFORCONTACT = [
+    ('COLLABORATION', 'Let\'s collaborate'),
+    ('SPEAKER', 'Speaker request'),
+    ('INTERVIEW', 'Podcast/Interview request'),
+    ('OTHER', 'Other (explain below)'),
+    ]
+
+    first_name = models.CharField(max_length = 50)
+    last_name = models.CharField(max_length = 50, null=True, blank=True)
+    email_address = models.EmailField(max_length = 150)
+    message = models.CharField(max_length = 2000)
+    reason_for_contact = models.CharField('Reason for contact', max_length=50, blank=False, choices=REASONSFORCONTACT)

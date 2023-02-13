@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'blog',
     'orderable',
     'clearcache',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

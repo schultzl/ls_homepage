@@ -3,6 +3,7 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 from projects.models import Project, Job, Technology, ArtWork
 from .forms import ContactForm
+from django.shortcuts import redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.contrib import messages
@@ -21,6 +22,22 @@ def project_index(request):
     }
     return render(request, 'project_index.html', context)
 
+def contact(request):
+
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/project_index')
+    else:
+        form = ContactForm()
+    
+    return render(request, 'contact.html', {'form': form})
+    
+
+def redirect_view(request):
+    response = redirect('redirect-success')
+    return response
 
 def project_detail(request, pk):
     project = Project.objects.get(pk=pk)
@@ -49,8 +66,6 @@ def error_404_view(request, exception):
     # we add the path to the the 404.html file
     # here. The name of our HTML file is 404.html
     return render(request, '404.html')
-"""
-
 
 def contact(request):
     if request.method == 'POST':
@@ -77,3 +92,15 @@ def contact(request):
         
     form = ContactForm()
     return render(request, "project_index.html", {'form':form})
+ 
+
+# Create your views here.
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            pass  # does nothing, just trigger the validation
+    else:
+        form = ContactForm()
+    return render(request, "project_index.html", {'form': form})
+"""

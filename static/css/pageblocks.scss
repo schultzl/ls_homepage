@@ -3,12 +3,13 @@
 
 #container {
 height:100%;
+width: 101.5%;
 }
 
 #top_div {
 min-height: 48vh;
 height:50%;
-width:102%;
+width:100%;
 background-color: var(--top-bottom-container);
 margin:auto;
 text-align:center;
@@ -18,12 +19,13 @@ text-align:center;
         position: absolute;
         top: 18vh;
         min-height: 47.5vh;
-        width: 74%;
+        width: 72%;
         @include break {
             min-height: 15vh;
-            top: 16vh;
+            top: 13vh;
             left: 0;
-            width: 100%;
+            width: 95%;
+            margin:0%;
             h1{
                 font-size: 22px;
             }
@@ -32,7 +34,7 @@ text-align:center;
             }
 
             p{
-                font-size: 9px;
+                font-size: 10px;
             }
         }
     }
@@ -49,7 +51,7 @@ text-align:center;
 #bottom_div {
 position: bottom;
 height:2%;
-width:102%;
+width:100%;
 background-color: var(--top-bottom-container);
 margin:auto;
 text-align:center;

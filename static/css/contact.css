@@ -1,0 +1,99 @@
+:root {
+  --dark: #19242c;
+  --hover-dark: #333333;
+  --light: rgb(192, 188, 188);
+  --hover-light: rgb(71, 91, 104);
+  --collapsible-closed: rgba(0,0,0,0);
+  --strip1: #2C3E4C;
+  --strip2: #016064;
+  --strip3: #48AAAD;
+  --strip4: #52b2C0;
+  --strip5: #62C5DA;
+  --top-bottom-container: var(--dark);
+  --middle-container: var(--light);
+  --copyright: var(--light);
+  --main-bg: #dae3e5;
+  --text-bg: #bbd1ea;
+  --shadow: #a1c6ea;
+  --text-sec: #507dbc;
+  --text-main: #16263b; }
+  :root body {
+    font-family: 'Lato';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    line-height: 1.5; }
+  :root .fa {
+    font-size: 30px;
+    color: white; }
+  :root h1 {
+    font-family: bradley hand, cursive;
+    font-size: 65px;
+    font-weight: 300;
+    color: var(--light); }
+  :root h2 {
+    font-size: 30px;
+    margin: 0 0 16px;
+    color: white;
+    font-weight: 300; }
+  :root h3 {
+    font-size: 30px;
+    margin: 0 0 16px;
+    color: #050416; }
+  :root h4 {
+    font-size: 22px;
+    margin: 0 0 16px;
+    color: #050416; }
+  :root h5 {
+    font-size: 17px;
+    margin: 0 0 16px;
+    color: white; }
+  :root h6 {
+    font-size: 8px;
+    margin: 0 0 16px;
+    color: white; }
+  :root p {
+    margin: 0 0 16px;
+    color: black; }
+  :root a, :root a:active, :root a:hover, :root a:visited {
+    color: #759fcf;
+    text-decoration: none; }
+  :root a:active, :root a:hover {
+    color: #f8f8fc; }
+
+.dark {
+  --strip1: #2C3E4C;
+  --strip2: #016064;
+  --strip3: #48AAAD;
+  --strip4: #52b2C0;
+  --strip5: #62C5DA;
+  --main-bg: #16263b;
+  --text-bg: #507dbc;
+  --shadow: #a1c6ea;
+  --text-sec: #bbd1ea;
+  --text-main: #dae3e5; }
+
+body {
+  background-color: var(--strip5); }
+
+#contact {
+  text-align: center;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  z-index: 10;
+  top: 25%;
+  left: 25%; }
+
+#contact_close {
+  position: absolute;
+  right: 3vw;
+  top: 3vw;
+  z-index: 2; }
+
+form {
+  text-align: left; }
+
+#alert-error {
+  color: #460f0f; }
+
+/*# sourceMappingURL=contact.css.map */

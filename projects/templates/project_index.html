@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 
 {% block page_content %}
 <section class="strips">
@@ -7,8 +8,8 @@
             <div class="strip__content">
                 <h2 class="strip__title" data-name="Lorem">{{ project.title }} <br> <p style="font-size:0.7vw;color:white;"> {{ project.description }} </p> </h2>
                 <div class="strip__inner-text">
-                    <h3>{{ project.title }} <br></h3>
-                    <h4>{{ project.description }} <br><br></h4>
+                    <h2 style="float:center;">{{ project.title }}</h2>
+                    <h4 id="light"><br>{{ project.description }} <br><br></h4>
                     {% if project.title == 'Work & science' %}
 
                         {% for tech in techs %}                 
@@ -16,6 +17,8 @@
                                 <span>{{ tech.name | upper }}</span> 
                             </i> 
                         {% endfor %}
+
+                        <hr>
 
                         {% for item in jobs %}
                             <button type="button" class="collapsible {{ item.pk }}"> &rarr;    <b>{{ item.job_title }}</b> | {{ item.company_name }} | {{ item.start_date }} - {{ item.end_date|default:"today" }} </button>
@@ -28,7 +31,7 @@
                                 </div>
                         {% endfor %}
 
-                    {% elif project.title == 'Tech & expertise' %}
+                    {% elif project.title == 'Contributions' %}
                         {% for tech in techs %}                 
                             <i class="devicon-{{ tech.dev_icon|lower }}-plain">
                                 <span>{{ tech.name | upper }}</span> 
@@ -49,22 +52,6 @@
                                 {% endfor %}
                             </div>
                         <p><br><br></p>
-                    {% elif project.title == 'Contact' %}
-                        <!-- <div style="margin:80px">
-                            <form method="post">
-                            {% csrf_token %}
-                                {{form.as_p}}
-                                <button type="submit">Submit</button>
-                            </form>
-                        </div>
-                        -->
-                        <p>
-                        Now it's your turn. Get in touch if you want to know more about future projects, 
-                        collaborate in some of my existing experiments, or just talk about squiggly career paths.
-
-                        <br><br>
-                        </p>
-
                     {% else %}
                         <h4>Coming soon!</h4>
 
@@ -84,6 +71,8 @@
                             <br>
                             <a href="https://calendly.com/larissaschultze/20min" target="_blank"><i class="fa fa-phone"></i></a>
                     </p>
+
+                    <p id="copyright-inner">© Larissa Schultze  · <a href="privacy/">Copyright 2022</a>  · All rights reserved  ·  <a href="privacy/">Privacy</a> </p>
                 </div>   
             </div>
         </article> 

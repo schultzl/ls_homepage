@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% sass_src 'css/style.scss' %}" rel="stylesheet" type="text/css" />
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
     <script defer src="{% static 'js/projects.js' %}"></script> 
 
@@ -50,7 +50,9 @@
                         <img src="{% static 'media/images/images/me2.png' %}" alt="" width="100%" vspace="15">
                     </h2>
                     <div class="picstrip__inner-text">
-                        <img src="{% static 'media/images/images/me.jpeg' %}" alt="" width="30%" vspace="50" hspace="350">
+                        <div class="centery">
+                            <img src="{% static 'media/images/images/me.jpeg' %}" alt="" width="30%" vspace="50">
+                        </div>
                         <h5>
                             Hi there and welcome to my website! <br><br>
                             Here you'll find some information about who I am as a person,
@@ -95,7 +97,7 @@
     </div>
   
     <div id="bottom_div">
-        <p class="copyright">© Copyright 2022  · Larissa Schultze  · All rights reserved</p>
+        <p id="copyright">© Larissa Schultze  · <a href="privacy/">Copyright 2022</a>  · All rights reserved  ·  <a href="privacy/">Privacy</a> </p>
     </div>
     
 </div>
