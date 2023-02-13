@@ -4,6 +4,21 @@
 #container {
 height:100%;
 width: 101.5%;
+
+@include break{
+
+    i.fa.fa-github{
+        font-size: 1.5em;;
+    }
+
+    i.fa.fa-linkedin{
+        font-size: 1.5em;;
+    }
+
+    i.fa.fa-phone{
+        font-size: 1.5em;;
+    }
+}
 }
 
 #top_div {
@@ -59,6 +74,9 @@ width:100%;
 background-color: var(--top-bottom-container);
 margin:auto;
 text-align:center;
+@include break {
+    height:2%;
+}
 }
 
 /*

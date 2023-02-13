@@ -23,6 +23,13 @@ p#copyright-inner {
 	text-align: center;
 }
 
+p#plinks {
+  text-align: right;
+  @include break {
+    font-size: 12;
+  }
+}
+
 /* Demo purposes */
 
 div[class="col-md-4"]{
@@ -71,22 +78,22 @@ i[class^="devicon"] span {
   font-weight: 600;
   font-family: Raleway, sans-serif;
   @include break {
-    font-size: 0.4rem;
+    font-size: 0.25rem;
   }
 }
 
 @media (max-width: 500px) {
   i[class^="devicon"] {
-      font-size: 4.5rem;
+      font-size: 3rem;
   }
 
   i[class^="devicon"] > span {
-      font-size: 0.7rem;
+      font-size: 0.4rem;
   }
 
   i[class^="devicon"]:hover {
       color: var(--hover-dark);
-      font-size: 3.5rem;
+      font-size: 3rem;
   }
 
   /*div[class="lefty"] {
@@ -107,7 +114,7 @@ button[class^="collapsible"]  {
   color: var(--light);
 
   @include break {
-    padding: 12px;
+    padding: 3.5px;
     font-size: 12px;
   }
 }
